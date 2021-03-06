@@ -101,5 +101,12 @@ RSpec.describe "GildedRose" do
       update_quality(items)
       expect(items[5].quality).to eq 4
     end
+    it "Should likewise decrease in quality twice as fast when expired i.e. decrease by 4 after sell_in days" do
+      item = [Item.new("Conjured Ek-ek", 2, 20)]
+      for i in 1..3
+        update_quality(item)
+      end
+      expect(item[0].quality).to eq 12
+    end
   end
 end

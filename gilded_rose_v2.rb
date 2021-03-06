@@ -6,7 +6,7 @@ def update_quality(items)
 end
 
 def adjust_sell_in(item)
-  if !is_legendary(item)
+  unless is_legendary(item)
     item.sell_in -= 1
   end
 end
